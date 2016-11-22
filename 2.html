@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <title>
+   Вторая
+  </title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  
+  <script>
+  function makeBuffer() {
+  var str = '';
+
+  return function(part) {
+    if (arguments.length == 0) { 
+      return str;
+    }
+    str += part;
+  };
+};
+
+var buffer = makeBuffer();
+
+buffer(' Hello');
+buffer(' World');
+buffer('!');
+alert( buffer() ); // Hello World!
+
+var buffer1 = makeBuffer();
+buffer1(0);
+buffer1(1);
+buffer1(0);
+alert( buffer1() ); // '010'
+
+
+  </script>
+
+</body>
+
+</html>
